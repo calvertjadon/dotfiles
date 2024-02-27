@@ -1,8 +1,12 @@
 #!/usr/bin/env bash
 
-packagelist=dependencies.txt
 
-xargs -a <(awk '! /^ *(#|$)/' "$packagelist") -r -- sudo apt-get install
+# install nodejs
+curl -fsSL https://deb.nodesource.com/setup_21.x | sudo -E bash - &&\
+sudo apt install -y nodejs
+
+# install other deps
+sudo apt install -y ripgrep fd-find fzf
 
 git submodule init
 git submodule update

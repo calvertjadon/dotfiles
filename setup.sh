@@ -25,17 +25,29 @@ if [ ${#missing[@]} -gt 0 ]; then
 	sudo apt install -y "${missing[@]}"
 fi
 
+
 git submodule init
 git submodule update
 
 stow .
 
+# configure tmux
+if [ ! -d "$HOME/.tmux/plugins/tpm" ]; then
+    git clone https://github.com/tmux-plugins/tpm "$HOME/.tmux/plugins/tpm"
+    tmux source "$HOME/.config/tmux/tmux.conf"
+    "$HOME/.config/tmux/plugins/tpm/bin/install_plugins"
+
+    chmod u+x "$HOME/.config/tmux/plugins/tmux-kanagawa/kanagawa.tmux"
+    fd .*\.sh "$HOME/.config/tmux/plugins/tmux-kanagawa/scripts" --exec chmod u+x {} \;
+fi
+
+# configure aliases
 case "$HOSTNAME" in
 "L1IT-LP01") ;;
 *) ;;
 esac
 
-echo 'alias ll="ls -al"' >>~/.bashrc
+echo 'alias ll="ls -al"' >~/.bash_aliases
 
 source "$HOME/.bashrc"
 echo "Setup successful."

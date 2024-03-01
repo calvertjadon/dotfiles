@@ -100,6 +100,10 @@ if [ -f "$HOME/.bash_aliases" ]; then
 	source "$HOME/.bash_aliases"
 fi
 
+if [ -f "$HOME/.user_aliases" ]; then
+	source "$HOME/.user_aliases"
+fi
+
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
@@ -115,6 +119,3 @@ fi
 if [ -f "$HOME/.pom.sh" ]; then
 	source "$HOME/.pom.sh"
 fi
-alias music="ssh gtky@raspi04"
-alias ll="ls -al"
-alias ll="ls -al"

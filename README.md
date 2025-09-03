@@ -11,15 +11,11 @@ git clone git@github.com/calvertjadon/dotfiles.git
 cd dotfiles
 ```
 
-then run `setup.sh`. Dependencies will be installed automatically.
+then run `stow x` where `x` is the package you want to configure
 
 ```sh
-chmod +x setup.sh
-./setup.sh
+stow zsh
+stow neovim
+stow wezterm
 ```
 
-## References
-
-[Dreams of Anatomy YouTube video](https://www.youtube.com/watch?v=y6XCebnB9gs)
-
-- [repo](https://github.com/dreamsofautonomy/dotfiles)

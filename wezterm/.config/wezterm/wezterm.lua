@@ -2,14 +2,30 @@ local wezterm = require("wezterm")
 
 local config = wezterm.config_builder()
 local act = wezterm.action
+local xdg_config_home = os.getenv("xdg_config_home")
 
--- config.default_domain = "WSL:Ubuntu"
+local wezterm = require("wezterm")
+
+if wezterm.target_triple == 'x86_64-pc-windows-msvc' then
+  -- Windows-specific config
+  config.default_domain = "WSL:Ubuntu"
+end
 
 config.color_scheme = "Tokyo Night (Gogh)"
 config.font = wezterm.font({ family = "CaskaydiaCove Nerd Font Mono" })
 config.font_size = 13
 config.window_decorations = "TITLE | RESIZE"
 config.window_background_opacity = 0.95
+config.background = {
+{
+	source = {
+        File = xdg_config_home .. "/wezterm/backgrounds/nord_dark_city.png",
+	},
+		opacity = 1,
+		hsb = { brightness = 0.3 },
+	},
+    
+}
 
 ---
 --- TAB BAR

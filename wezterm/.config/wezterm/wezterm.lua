@@ -3,10 +3,10 @@ local wezterm = require("wezterm")
 local config = wezterm.config_builder()
 local act = wezterm.action
 
-config.default_domain = "WSL:Ubuntu"
+-- config.default_domain = "WSL:Ubuntu"
 
 config.color_scheme = "Tokyo Night (Gogh)"
-config.font = wezterm.font({ family = "CaskaydiaMono Nerd Font Mono" })
+config.font = wezterm.font({ family = "CaskaydiaCove Nerd Font Mono" })
 config.font_size = 13
 config.window_decorations = "TITLE | RESIZE"
 config.window_background_opacity = 0.95

@@ -25,3 +25,5 @@ source ~/powerlevel10k/powerlevel10k.zsh-theme
 export PATH=/home/jncalvert/.opencode/bin:$PATH
 
 . "$HOME/.local/bin/env"
+
+alias wezterm='flatpak run org.wezfurlong.wezterm'

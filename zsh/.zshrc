@@ -26,4 +26,7 @@ export PATH=/home/jncalvert/.opencode/bin:$PATH
 
 . "$HOME/.local/bin/env"
 
-alias wezterm='flatpak run org.wezfurlong.wezterm'
+export XDG_CONFIG_HOME="$HOME/.config"
+alias wezterm='env WAYLAND_DISPLAY=1 flatpak run org.wezfurlong.wezterm'
+
+

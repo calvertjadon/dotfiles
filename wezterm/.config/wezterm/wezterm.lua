@@ -2,29 +2,30 @@ local wezterm = require("wezterm")
 
 local config = wezterm.config_builder()
 local act = wezterm.action
-local xdg_config_home = os.getenv("xdg_config_home")
+local xdg_config_home = os.getenv("XDG_CONFIG_HOME") or (os.getenv("HOME") .. "/.config")
 
-local wezterm = require("wezterm")
-
-if wezterm.target_triple == 'x86_64-pc-windows-msvc' then
-  -- Windows-specific config
-  config.default_domain = "WSL:Ubuntu"
+if wezterm.target_triple == "x86_64-pc-windows-msvc" then
+	-- Windows-specific config
+	config.default_domain = "WSL:Ubuntu"
+	config.font = wezterm.font({ family = "CaskaydiaCove Nerd Font Mono" })
+else
+	config.font = wezterm.font({ family = "Cascadia Code NF" })
 end
 
 config.color_scheme = "Tokyo Night (Gogh)"
-config.font = wezterm.font({ family = "CaskaydiaCove Nerd Font Mono" })
 config.font_size = 13
 config.window_decorations = "TITLE | RESIZE"
 config.window_background_opacity = 0.95
+config.front_end = "OpenGL"
+config.prefer_egl = true
 config.background = {
-{
-	source = {
-        File = xdg_config_home .. "/wezterm/backgrounds/nord_dark_city.png",
-	},
+	{
+		source = {
+			File = xdg_config_home .. "/wezterm/backgrounds/nord_dark_city.png",
+		},
 		opacity = 1,
 		hsb = { brightness = 0.3 },
 	},
-    
 }
 
 ---

@@ -27,3 +27,8 @@ export PATH=/home/jncalvert/.opencode/bin:$PATH
 . "$HOME/.local/bin/env"
 
 alias wezterm='flatpak run org.wezfurlong.wezterm'
+
+if [ -z "$TMUX" ]
+then
+    tmux attach -t TMUX || tmux new -s TMUX
+fi

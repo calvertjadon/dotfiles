@@ -22,11 +22,9 @@ source ~/powerlevel10k/powerlevel10k.zsh-theme
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-export PATH=/home/jncalvert/.opencode/bin:$PATH
+export XDG_CONFIG_HOME="$HOME/.config"
+alias wezterm='env WAYLAND_DISPLAY=1 flatpak run org.wezfurlong.wezterm'
 
-. "$HOME/.local/bin/env"
-
-alias wezterm='flatpak run org.wezfurlong.wezterm'
 
 if [ -z "$TMUX" ]
 then

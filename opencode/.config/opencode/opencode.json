@@ -1,0 +1,24 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "provider": {
+    "dmr": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "Docker Model Runner",
+      "options": {
+        "baseURL": "http://192.168.168.80:11434/v1",
+        "apiKey": "docker"
+      },
+      "models": {
+        "hf.co/Qwen/Qwen2.5-Coder-7B-Instruct-GGUF:latest": {
+          "name": "qwen2.5-coder:7b"
+        },
+        "llama3.1:8b": {
+          "name": "llama3.1:8b"
+        },
+        "hf.co/unsloth/gpt-oss-20b-GGUF:Q4_K_M": {
+          "name": "gpt-oss-20b"
+        }
+      }
+    }
+  }
+}

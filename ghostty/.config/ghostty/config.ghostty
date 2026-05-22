@@ -1,0 +1,29 @@
+# font 
+font-family = Cascadia Code NF
+font-size = 13
+font-feature = calt # ligatures
+
+# colors
+theme = TokyoNight
+background = #0a0a0a
+
+# keybinds
+keybind = ctrl+shift+u=scroll_page_up
+keybind = ctrl+shift+d=scroll_page_down
+
+keybind = ctrl+h=goto_split:left
+keybind = ctrl+j=goto_split:down
+keybind = ctrl+k=goto_split:up
+keybind = ctrl+l=goto_split:right
+
+keybind = ctrl+shift+h=previous_tab
+keybind = ctrl+shift+l=next_tab
+
+keybind = ctrl+shift+|=new_split:right
+keybind = ctrl+shift+-=new_split:down
+
+keybind = ctrl+shift+x=close_surface
+
+# decoration
+window-decoration = false
+confirm-close-surface = false
